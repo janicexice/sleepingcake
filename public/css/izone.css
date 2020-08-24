@@ -1,0 +1,1638 @@
+@charset "UTF-8";
+/*\*/
+
+/* ------------------------------------
+ * Font
+ * ------------------------------------ */
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+
+/* ------------------------------------
+ * Over Ride
+ * ------------------------------------ */
+
+html, body {
+    height: 100%;
+}
+@media all and (-ms-high-contrast:none){
+    body {
+        overflow-x: hidden;
+    }
+}
+body.open {
+    overflow: hidden;
+}
+#container {
+	width: 100%;
+}
+article {
+    padding: 50px 0;
+    text-align: left;
+    border-top: solid 1px #ede7ea;
+}
+.content-wrap {
+    width: 1160px;
+    margin: 0 auto;
+}
+
+h2.content-title {
+    margin-bottom: 2%;
+    text-align: center;
+}
+h2.content-title span {
+    position: relative;
+    display: block;
+    width: 360px;
+    margin: 0 auto;
+}
+h2.content-title span::before,
+h2.content-title span::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 120px;
+    height: 1px;
+    background-color: #ff50a0;
+}
+h2.content-title span::before {
+    left: -120px;
+}
+h2.content-title span::after {
+    right: -120px;
+}
+h3.title {
+    margin: 0;
+    padding: 1% 0 4%;
+    font-weight: bold;
+    font-size: 2.0rem;
+    text-align: center;
+    line-height: 1.6;
+}
+h3.title-form {
+    margin: 2em 0 1em;
+    padding: 0.5em 0;
+    font-size: 1.8rem;
+    color: #ff50a2;
+    background-color: #ffecf8;
+}
+
+@media screen and (max-width: 1199px) {
+    .content-wrap {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 1039px) {
+    #container {
+        overflow: hidden;
+    }
+    h2.content-title {
+        text-align: left;
+    }
+    h2.content-title span {
+        width: auto;
+        height: 60px;
+    }
+    h2.content-title span::before,
+    h2.content-title span::after {
+        content: none;
+    }
+    h2.content-title img {
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    article {
+        padding: 5% 0 8%;
+    }
+    h3.title-form {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* ------------------------------------
+ * general style
+ * ------------------------------------ */
+
+/*-- text align --*/
+.tac { text-align: center;}
+.tal { text-align: left;}
+.tar { text-align: right;}
+
+/*-- image size --*/
+.w100 { width: 100%;}
+.mw100 {
+	max-width: 100%;
+	width: auto !important;
+	width: 100%;
+}
+
+/*-- font --*/
+time, .cate, .btn {
+    font-family: Lato, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+    font-weight: 700;
+}
+
+
+/* ------------------------------------
+ * Header
+ * ------------------------------------ */
+
+header {
+    position: relative;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -webkit-flex;
+	display: flex;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+	height: 130px;
+	padding: 0 50px;
+    background-color: #ffffff;
+	z-index: 1000;
+}
+header h1 a {
+    display: block;
+    width: 412px;
+    height: 70px;
+    background: url("https://www.izone-official.com/shared/img/common/logo.svg") no-repeat left center;
+    background-size: auto 100%;
+    text-indent: -9999px;
+    will-change: transform;
+}
+#select-lang {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+}
+.select-lang-inner {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+	background: #f98dbe;
+    min-width: 80px;
+}
+.select-lang-inner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background: url("../img/parts/icon_lang.png") no-repeat center center;
+}
+#select-lang select {
+    padding-left: 28px;
+	border: none;
+	outline: none;
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+#select-lang select::-ms-expand {
+    display: none;
+}
+#select-lang option {
+    padding-left: 0;
+    color: #ff50a0;
+}
+
+#nav-toggle {
+    display: none;
+    transform: scale3d(0, 0, 0);
+}
+#nav-fullscreen {
+    height: 100%;
+}
+#nav-overlay {
+    display: none;
+}
+#nav-menu {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    margin-top: 40px;
+}
+#nav-menu li a {
+    display: block;
+    padding: 0 15px;
+    line-height: 1;
+    font-family: Lato, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+#nav-menu li a:hover {
+    color: #ff50a0;
+    opacity: 1;
+}
+#nav-menu li a span {
+    display: inline-block;
+    position: relative;
+}
+#nav-menu li a span::after {
+	content: '';
+	position: absolute;
+	bottom: -8px;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	-webkit-transform: scaleX(0);
+	-ms-transform: scaleX(0);
+	transform: scaleX(0);
+	background-color: #ff50a0;
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease;
+}
+#nav-menu li a:hover span::after {
+	-webkit-transform: scaleX(1);
+	-ms-transform: scaleX(1);
+	transform: scaleX(1);
+}
+
+@media screen and (max-width: 1379px) {
+    header h1 a {
+        width: 353px;
+        height: 60px;
+        margin-top: 5px;
+    }
+    #nav-menu li a {
+        padding: 0 10px;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    header h1 a {
+        width: 161px;
+        height: 70px;
+        background: url("https://www.izone-official.com/shared/img/common/logo_sp.svg") no-repeat left center;
+        background-size: contain;
+    }
+    #nav-menu li a {
+        padding: 0 10px;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 1039px) {
+    #select-lang {
+        top: 30px;
+        right: 40px;
+    }
+    #nav-menu li a:hover {
+        color: #ffffff;
+        opacity: 0.8;
+    }
+    #nav-menu li a span::after {
+    	content: none;
+    }
+    #nav-container {
+        margin-left: auto;
+        position: relative;
+    	z-index: 100;
+        margin-top: 40px;
+    }
+    #nav-toggle {
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin-left: 5px;
+        cursor: pointer;
+        transform: rotate(0deg);
+    }
+    #nav-toggle span {
+        background-color: black;
+        width: 100%;
+        height: 5px;
+        border-radius: 2.5px;
+        display: block;
+        position: absolute;
+        left: 0;
+        content: "";
+        transition: 0.5s ease-in-out;
+    }
+    #nav-toggle span:nth-child(1) {
+        top: 2px;
+        transform-origin: left center;
+    }
+    #nav-toggle span:nth-child(2) {
+        top: 12px;
+        transform-origin: left center;
+    }
+    #nav-toggle span:nth-child(3) {
+        top: 22px;
+        transform-origin: left center;
+    }
+    #nav-toggle.open span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 3px;
+        left: 4px;
+    }
+    #nav-toggle.open span:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+    }
+    #nav-toggle.open span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 25px;
+        left: 4px;
+    }
+    #nav-overlay {
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        z-index: -1;
+        border-radius: 50%;
+        transition-delay: 0s;
+        transform: scale3d(0, 0, 0);
+    }
+    #nav-overlay.open {
+        display: block;
+        transition: 1.0s;
+        transition-delay: 0s;
+        transform: scale3d(1, 1, 1);
+    }
+    #nav-fullscreen {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        transition: ease-in-out 0.25s;
+        transition-delay: 0s;
+        visibility: hidden;
+        opacity: 0;
+    }
+    #nav-fullscreen a {
+        color: white;
+        text-decoration: none;
+    }
+    #nav-fullscreen.open {
+        height: 100%;
+        visibility: visible;
+        opacity: 1;
+        transition: ease-in-out 0.5s;
+        transition-delay: 0.25s;
+    }
+    #nav-fullscreen ul {
+        opacity: 0;
+    }
+    #nav-fullscreen.open ul {
+        opacity: 1;
+    }
+    #nav-fullscreen *, #nav-fullscreen *:before, #nav-fullscreen *:after {
+        box-sizing: inherit;
+    }
+    #nav-overlay {
+        background: linear-gradient(#ffa5ce 10%, #ffb6d7 50%, #fd6eaf 90%);
+    }
+    #nav-toggle span {
+        background-color: #ff50a0;
+    }
+    #nav-fullscreen {
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: -webkit-flex;
+    	display: flex;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        color: #ffffff;
+    }
+    #nav-menu {
+        display: block;
+        margin-top: 0;
+    }
+    #nav-menu li a {
+        padding: 20px 10px;
+        font-size: 4vh;
+        font-weight: normal;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    header {
+    	padding: 0 40px;
+    }
+    #nav-menu li a {
+        padding: 10px 10px;
+        font-size: 2.8rem;
+        font-weight: normal;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    header {
+        height: 80px;
+        padding: 0 20px;
+    }
+    header h1 a {
+        width: 138px;
+        height: 60px;
+        background: url("https://www.izone-official.com/shared/img/common/logo_sp.svg") no-repeat left center;
+        background-size: contain;
+        margin-top: 0;
+    }
+    #nav-container {
+        margin-top: 0;
+        margin-left: 0;
+    }
+    #nav-overlay {
+        top: 20px;
+        left: 15px;
+    }
+    #nav-toggle {
+        margin-top: 0;
+    }
+    #select-lang {
+        position: static;
+    }
+}
+
+
+/* ------------------------------------
+ * LocalNav
+ * ------------------------------------ */
+
+.localNav {
+	margin-bottom: 40px;
+    font-family: Lato, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+}
+.localNav ul {
+	zoom:1;
+	overflow: hidden;
+	font-size: 0;
+    text-align: center;
+}
+.localNav ul li {
+    display: inline-block;
+}
+.localNav ul li a {
+	display: block;
+	margin: 0 6px 6px 0;
+	padding: 0 10px;
+	text-decoration: none;
+	text-align: center;
+	white-space: nowrap;
+	font-size: 1rem;
+	border: solid 1px #ede7ea;
+	border-radius: 3px;
+	vertical-align: baseline;
+    -webkit-transition: background 0.3s ease;
+	transition: background 0.3s ease;
+}
+.localNav ul li a:hover {
+    background-color: #ffe9f2;
+    border: solid 1px #ffdceb;
+    color: #fe50a0;
+}
+.selectCate {
+    text-align: center;
+    line-height: 1.3;
+    font-family: Lato, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+    font-size: 2.8rem;
+}
+
+@media screen and (max-width: 1199px) {
+    .localNav ul li a {
+    	padding: 0 6px;
+    }
+}
+
+@media screen and (max-width: 1039px) {
+	.localNav ul {
+		text-align: left;
+	}
+	.selectCate {
+		text-align: left;
+        font-size: 2.0rem;
+        font-weight: bold;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.localNav {
+		margin-bottom: 5%;
+	}
+	.localNav ul li {
+		width: 33%;
+		overflow: hidden;
+        float: left;
+	}
+	.localNav ul li a {
+		margin: 0 3px 6px 3px;
+	}
+}
+
+/* ------------------------------------
+ * List
+ * ------------------------------------ */
+
+.list {
+	border-top: solid 1px #ede7ea;
+}
+.list > li {
+	zoom: 1;
+	overflow: hidden;
+	margin: 0;
+	padding: 1.5em 0;
+	border-bottom: solid 1px #ede7ea;
+}
+.list > li a {
+    position: relative;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -webkit-flex;
+	display: flex;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    text-decoration: none;
+    padding-right: 8%;
+}
+.list > li a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    width: 31px;
+    height: 5px;
+    background: url("../img/parts/arrow_list.png") no-repeat center center;
+    background-size: contain;
+    -webkit-transition: .3s all;
+    transition: .3s all;
+}
+.list > li a:hover {
+    color: #ff50a0;
+    -webkit-transition: color .3s ease;
+    transition: color .3s ease;
+}
+.list > li a:hover::after {
+    right: 0;
+}
+.list > li .item-data {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    width: 210px;
+}
+.list > li .item-body {
+    width: calc(100% - 210px);
+}
+.list > li a time {
+    position: relative;
+    width: 50%;
+    font-size: 1.3rem;
+}
+.list > li time::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background: url("https://www.izone-official.com/shared/img/parts/icon_diamond.svg") no-repeat center center;
+}
+.list > li .cate {
+    width: 50%;
+    padding-left: 23px;
+    color: #ff50a0;
+    font-size: 1.1rem;
+    overflow: hidden;
+}
+.list > li .cate span {
+    display: block;
+}
+.list > li > ul {
+	margin: 0;
+	padding: 1.5em 0 0;
+	font-size: 1.2rem;
+}
+.list > li > ol > li {
+	padding-bottom: 1em;
+	text-indent: 0;
+}
+.list > li > ol {
+	margin: 0;
+	padding: 1.5em 0 0 2em;
+	font-size: 1.3rem;
+}
+.list > li > ol > li {
+	padding-bottom: 1em;
+	text-indent: -3em;
+}
+.list > li > ol > li > ol > li {
+	text-indent: 0;
+}
+
+/* TYPE-DISC */
+.list.type_disc > li {
+	padding-left: 1.1em;
+	list-style: disc inside;
+	text-indent: -1.1em;
+}
+/* TYPE-DECIMAL */
+.list.type_decimal > li {
+    padding-left: 1.1em;
+    list-style: decimal inside;
+    text-indent: -1.1em;
+}
+/* LIST-DATA */
+.list-data {
+    position: relative;
+    height: 5px;
+}
+.list-data .icon_rss {
+    position: absolute;
+    top: -25px;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    margin-bottom: 0.5em;
+    text-indent: -9999px;
+    background: url("https://www.izone-official.com/shared/img/parts/icon_rss.svg") no-repeat center center;
+    background-size: contain;    
+}
+
+@media screen and (max-width: 767px) {
+    .list > li a {
+        display: block;
+        padding-right: 7%;
+    }
+    .list > li a::after {
+        right: 0%;
+        width: 20px;
+        height: 5px;
+        background: url("../img/parts/arrow_list_sp.png") no-repeat center center;
+        background-size: contain;
+    }
+    .list > li .item-data {
+        width: 100%;
+        margin-bottom: 0.5em;
+    }
+    .list > li a time {
+        width: 100px;
+    }
+    .list > li .item-body {
+        width: 100%;
+    }
+    .list > li .cate {
+        width: calc(100% - 100px);
+    }
+    .list > li .cate span {
+        display: inline-block;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .list > li .item-body {
+        font-size: 1.3rem;
+    }
+}
+
+/* ------------------------------------
+ * Story
+ * ------------------------------------ */
+
+#story h3 {
+	margin: 0;
+	padding: 1% 0 4%;
+	font-weight: bold;
+	font-size: 2.0rem;
+	text-align: left;
+	line-height: 1.6;
+}
+#story .item-data {
+    position: relative;
+    padding-right: 40px;
+}
+#story .item-data .cate {
+    display: inline-block;
+    margin: 0 0 6px 10px;
+    padding: 0 10px;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: baseline;
+    background-color: #ffecf8;
+    white-space: nowrap;
+    font-size: 1rem;
+    border: solid 1px #ff50a0;
+    border-radius: 3px;
+    color: #ff50a0;
+}
+#story .item-data .icon_rss {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    text-indent: -9999px;
+    background: url("https://www.izone-official.com/shared/img/parts/icon_rss.svg") no-repeat center center;
+    background-size: contain;
+}
+#story .text {
+	text-align: left;
+	word-break: break-all;
+	overflow: hidden;
+}
+#story .text .photo img {
+    display: block;
+	max-width: 100%;
+	width: auto !important;
+	width: 100%;
+}
+#story .player {
+    width: 60%;
+    margin: 0;
+    padding-top: 38%;
+}
+#story .affect_member {
+    margin-top: 50px;
+    background-color: #ffecf8;
+}
+#story .affect_member ul {
+    zoom:1;
+    overflow: hidden;
+    padding: 0 10px
+}
+#story .affect_member ul li {
+    width: 8.3%;
+    float: left;
+    text-align: center;
+}
+#story .affect_member ul li a {
+    display: block;
+    margin: 10px 5px;
+    text-decoration: none;
+    overflow: hidden;
+}
+#story .affect_member ul li img {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+}
+#story .affect_member ul li p {
+    margin-top: 3px;
+    font-size: 1.0rem;
+    font-weight: bold;
+    color: #ff50a0;
+}
+
+@media screen and (max-width: 1039px) {
+    #story .affect_member ul li {
+        width: 16.6%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+	#story h3 {
+		padding: 1% 0 6%;
+		font-size: 1.5rem;
+	}
+	#story .player {
+		width: 100%;
+		margin: 0 auto;
+		padding-top: 56.25%;
+	}
+    #story .affect_member ul li {
+        width: 25%;
+    }
+    #story .affect_member ul li img {
+        border-radius: 5px;
+    }
+}
+@media screen and (max-width: 520px) {
+    #story .affect_member ul li p {
+        font-size: 0.9rem;
+        letter-spacing: -0.05em;
+    }
+}
+
+
+/* ------------------------------------
+ * Movie
+ * ------------------------------------ */
+
+.player {
+	position: relative;
+	width: 94%;
+	margin: 0 auto;
+	padding-top: 56.25%;
+}
+.player iframe,
+.player > div {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100% !important;
+	height: 100% !important;
+}
+video {
+	display: block;
+	width: 60%;
+	margin: 0;
+}
+
+/* HIDE DOWNLOAD Video BUTTON */
+video::-internal-media-controls-download-button {
+	display: none;
+}
+video::-webkit-media-controls-enclosure {
+	overflow: hidden;
+}
+video::-webkit-media-controls-panel {
+	width: calc(100% + 30px);
+}
+.video > audio {
+	width: 100%;
+}
+
+.video {
+	width: 100% !important;
+}
+.video > audio {
+	width: 105% !important;
+}
+
+/* Chrome 29+ */ /* HIDE DOWNLOAD Audio BUTTON */
+@media screen and (-webkit-max-device-pixel-ratio:0) and (max-resolution:.001dpcm) {
+	.video {
+		overflow: hidden;
+		width: 210px;
+		margin: 0 auto;
+	}
+	.video > audio {
+		width: 300px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.player {
+		width: 100%;
+		margin: 0 auto;
+		padding-top: 56.25%;
+	}
+	video {
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+
+
+/* ------------------------------------
+ * Form
+ * ------------------------------------ */
+
+form {
+	padding: 5% 0 0;
+}
+form legend {
+    display: inline-block;
+    margin: 0 auto 5%;
+	padding: 10px 10px;
+    min-width: 280px;
+    font-size: 116%;
+    color: #ffffff;
+	background-color: #383535;
+    line-height: 1.3;
+	letter-spacing: 0.5em;
+	border-radius: 25px;
+	text-align: center;
+}
+form input,
+form select,
+form textarea {
+	outline: none;
+	padding: 5px;
+	font-size: 90%;
+}
+form textarea,
+form select,
+form input[type="text"],
+form input[type="tel"] {
+	background-color: #ffffff;
+	border: solid 1px #cfcfcf;
+}
+form strong {
+	font-weight: bold;
+    color: #ff50a2;
+}
+form dl {
+	zoom:1;
+	overflow: hidden;
+	line-height: 1.5;
+}
+form dl dt {
+	clear: both;
+	width: 270px;
+	float: left;
+	box-sizing: border-box;
+	font-size: 90%;
+	font-weight: bold;
+    color: #ff50a2;
+}
+form dl dt label {
+	font-weight: bold;
+}
+form dl dt em {
+	display: inline-block;
+	font-size: 83%;
+	margin-left: 10px;
+}
+form dl dd {
+	margin-left: 270px;
+	padding-bottom: 30px;
+	box-sizing: border-box;
+	word-break: break-all;
+}
+form dl dd em {
+	font-size: 83%;
+}
+form dl dd textarea {
+	width: 100%;
+	resize: vertical;
+}
+form dl dd input[type=radio] {
+	vertical-align: 0.1em;
+}
+form dl dd img {
+	max-width: 100%;
+	width: auto !important;
+	width: 100%;
+}
+form dl dd .text {
+	display: block;
+	font-size: 83%;
+	line-height: 1.5;
+}
+form dl dd .photo {
+	margin-bottom: 10px;
+}
+
+@media screen and (max-width: 767px) {
+	form input,
+	form select,
+	form textarea {
+		font-size: 115%;
+	}
+	form dl dt {
+		width: 100%;
+		padding: 0.5em;
+		margin-bottom: 15px;
+		background-color: #f2f2f2;
+	}
+	form dl dd {
+		margin-left: 0px;
+		padding:10px 0 5%;
+	}
+	form dl dd input {
+		width: 100%;
+	}
+	form dl dd input#zip1,
+	form dl dd input#zip2,
+	form dl dd input#age,
+	form dl dd input#tel1,
+	form dl dd input#tel2,
+	form dl dd input#tel3 {
+		width: auto;
+	}
+	form dl dd input[type=radio] {
+		width: auto;
+	}
+}
+
+/* ------------------------------------
+ * Button
+ * ------------------------------------ */
+
+.btn {
+	display: block;
+	width: 500px;
+	margin: 3% auto;
+	line-height: 70px;
+	font-size: 1.3rem;
+    font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+	-webkit-transition: background 0.2s ease-in-out;
+	-moz-transition: background 0.2s ease-in-out;
+	-o-transition: background 0.2s ease-in-out;
+	transition: background 0.2s ease-in-out;
+    background-color: #ffecf8;
+	color: #ff50a0;
+}
+.btn:hover {
+    background-color: #ffd3ef;
+    color: #ff50a0;
+	text-decoration:none;
+}
+.btn_more_top {
+	display: block;
+	position: relative;
+	float: right;
+	padding: 10px 15px;
+	border: solid 1px #d0d0d0;
+	line-height: 1;
+	text-decoration: none;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+.btn_more_top:hover {
+	text-decoration: none;
+}
+.btn_more_top::after {
+	height: 100%;
+	left: 0;
+	top: 0;
+	width: 0;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.btn_more_top::before,
+.btn_more_top::after {
+	background: #4a60a0;
+	content: '';
+	position: absolute;
+	z-index: -1;
+}
+.btn_more_top:hover {
+	color: #ffffff;
+}
+.btn_more_top:hover:after {
+	width: 100%;
+}
+
+form a.btn,
+form a.back {
+	color:#fff;
+    -webkit-transition: none;
+    transition: none;
+}
+form a.btn:hover,
+form a.back:hover {
+	color:#fff;
+	text-decoration:none;
+	opacity:1;
+}
+form input.btn:hover {
+	text-decoration: none;
+	background-color: #ffd3ef;
+	cursor:pointer;
+}
+form .btn,
+form .back {
+	display:block;
+	width: 260px;
+	margin: 3% auto 0;
+	padding: 10px 20px 10px 10px;
+	text-align: center;
+	font-size: 1.5rem;
+	text-decoration: none;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	line-height: 1.9;
+    border: solid 1px #FF50A2;
+}
+form .back {
+	background-color:#999;
+}
+form ul {
+	zoom:1;
+	overflow:hidden;
+	width:600px;
+	margin:3% auto;
+}
+form ul li {
+	width:50%;
+	float:left;
+	padding-bottom: 10px;
+}
+form ul li .btn {
+	width: 96%;	
+}
+form ul li:first-child .btn {
+    background-color: #e2e2e2;
+    color: #999;
+    border: solid 1px #a0a0a0;
+}
+form ul li:first-child .btn:hover {
+	background-color: #adadad;
+	color: #ffffff;
+}
+
+.btnList {
+	width: 600px;
+	margin: 0 auto;
+	padding-bottom: 1%;
+	zoom:1;
+	overflow: hidden;
+}
+.btnList li {
+	width: 50%;
+	float: left;
+}
+.btnList li .btn {
+	width: 96%;	
+}
+
+@media screen and (max-width: 767px) {
+	.btn {
+		width: 100%;
+	    line-height: 60px;
+	}
+	form ul {
+		width:100%;
+	}
+	form ul li {
+		float:left;
+		width:50%;
+	}
+	.btnList {
+		width: 260px;
+	}
+	.btnList li {
+		width: 100%;
+		float: none;
+	}
+	.btn_more_top {
+		padding: 8px 8px;
+		font-size: 11px;
+	}
+}
+
+
+/* ------------------------------------
+ * Notice
+ * ------------------------------------ */
+
+.notice {
+	margin:3% 0 0;
+	padding:20px;
+	border: dotted 1px #051226;
+	font-size:83%;
+}
+.notice h3 {
+	margin-bottom:10px;
+	font-size:130%;
+	font-weight:bold;
+	text-align:center;
+}
+.notice ul li {
+	padding-left:1em;
+	text-indent:-1em;
+}
+
+/* ------------------------------------
+ * Attention
+ * ------------------------------------ */
+
+.attention {
+	margin: 3% 0;
+	padding: 10px;
+	border: solid 2px #c00;
+	color: #c00;
+	font-weight: bold;
+}
+
+/* ------------------------------------
+ * Paging
+ * ------------------------------------ */
+
+.pagination {
+    width: 100%;
+	overflow: hidden;
+}
+.pagination-lists {
+	zoom:1;
+	overflow: hidden;
+    margin: 3% 0;
+    padding: 0 0.5em;
+    line-height: 1;
+	background-color: #f2f2f2;
+    font-size: 1.5rem;
+    font-family: Lato, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+    font-weight: bold;
+	color: #ff50a0;    
+}
+.pagination-lists li {
+	width: 25%;
+	text-align: center;
+}
+.pagination-lists li:first-child {
+	float: left;
+}
+.pagination-lists li:first-child a{
+	background: url(../img/parts/arrow_prev.png) no-repeat left center;
+}
+.pagination-lists li:last-child {
+	float: right;
+}
+.pagination-lists li:last-child a{
+	background: url(../img/parts/arrow_next.png) no-repeat right center;
+}
+.pagination-lists li.nav_list {
+	float: none;
+	width: 50%;
+	margin: 0 auto;
+}
+.pagination-lists li + li.nav_list {
+	float: left;
+}
+.pagination-lists li.nav_month {
+	float: left;
+	width: 50%;
+	margin: 0 auto;
+    font-weight: bold;
+}
+.pagination-lists li a,
+.pagination-lists li span {
+	display: block;
+    padding: 1em 0;
+	text-decoration: none;
+    color: #ff50a0;
+}
+.pagination-lists li span {
+    color: #f7b0d0;
+}
+.pagination-lists li.nav_month span {
+	color: #ff50a0;
+}
+
+
+@media (max-width: 767px) {
+	.pagination-lists {
+		padding: 0;
+	}
+	.pagination-lists li {
+		width: 35%;
+	}
+	.pagination-lists li:first-child a{
+		background-position: left 10% center;
+	}
+	.pagination-lists li:last-child a{
+		background-position: right 10% center;
+	}
+	.pagination-lists li.nav_list {
+		width: 30%;
+	}
+	.pagination-lists li.nav_month {
+		width: 30%;
+	}
+}
+
+@media (max-width: 520px) {
+    .pagination-lists li:first-child {
+        width: 30%;
+    }
+    .pagination-lists li:last-child {
+        width: 30%;
+    }
+    .pagination-lists li.nav_list {
+        width: 40%;
+    }
+	.pagination-lists li.nav_month {
+		width: 40%;
+	}
+}
+
+
+
+/* pagenation-number */
+.pagination .pagination-number {
+	width: 100%;
+	margin: 4% auto 8%;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -webkit-flex;
+	display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.pagination-number li {
+	display: inline-block;
+}
+.pagination-number li a,
+.pagination-number li span {
+	display: block;
+    width: 4em;
+    height: 4em;
+	margin: 10px 5px 0;
+	text-align: center;
+	text-decoration: none;
+    box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.2);
+	line-height: 4em;
+    border-radius: 2em;
+    font-size: 1.5rem;
+    font-family: Lato, sans-serif;
+    font-weight: bold;
+    -webkit-transition: margin-top 0.3s ease;
+	transition: margin-top 0.3s ease;
+}
+.pagination-number li a:hover {
+    margin-top: 0;
+    color: #ff50a0;
+}
+.pagination-number li span {
+    color: #282828;
+}
+.pagination-number li.current span {
+    background-color: #ff50a0;
+    color: #ffffff;
+}
+.pagination-number li.prev a , .pagination-number li.prev span {
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+	background: url("../img/parts/arrow_prev.png") no-repeat center center;
+	line-height: 0;
+}
+.pagination-number li.next a , .pagination-number li.next span {
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+	background: url("../img/parts/arrow_next.png") no-repeat center center;
+}
+.pagination-number li.prev span , .pagination-number li.next span {
+	opacity: .4;
+}
+.pagination-number li.nav_ellipsis span {
+    box-shadow: none;
+}
+
+@media screen and (max-width: 767px) {
+    .pagination-number li a,
+    .pagination-number li span {
+        width: 3em;
+        height: 3em;
+    	line-height: 3em;
+        border-radius: 1.5em;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .pagination ul {
+	    margin: 4% auto 8%;
+    }
+    .pagination-number li a,
+    .pagination-number li span {
+    	margin: 5px 3px 0;
+        box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.2);
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .pagination-number li a,
+    .pagination-number li span {
+        width: 2em;
+        height: 2em;
+        box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.2);
+    	line-height: 2em;
+        border-radius: 1em;
+        font-size: 1rem;
+    }
+}
+
+
+/* ------------------------------------
+ *  Copy Guard
+ * ------------------------------------ */
+
+img.guard {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100% !important;
+	height: 100% !important;
+	max-width: none;
+	z-index: 100;
+}
+
+
+/* ------------------------------------
+ * Table
+ * ------------------------------------ */
+
+.tbl01 {
+    margin: 1em 0;
+    border-spacing: 0;
+}
+.tbl01 th,
+.tbl01 td{
+    padding: 0 1em;
+    vertical-align: top;
+}
+.tbl02 {
+    margin: 1em 0;
+    border-spacing: 0;
+    border-top: solid 1px #ede7ea;
+    border-right: solid 1px #ede7ea;
+}
+.tbl02 th,
+.tbl02 td{
+    padding: 0.5em 1em;
+    vertical-align: middle;
+    border-bottom: solid 1px #ede7ea;
+    border-left: solid 1px #ede7ea;
+}
+
+
+/* ------------------------------------
+ * Footer
+ * ------------------------------------ */
+
+footer {
+    position: relative;
+    border-top: solid 1px #ede7ea;
+    font-family: Lato, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+}
+
+#toTop a {
+    position: relative;
+    display: block;
+    margin: -25px auto 0;
+    width: 58px;
+    height: 58px;
+    border: solid 1px #ff50a0;
+    border-radius: 50%;
+    background-color: rgba( 255, 255, 255, 1);
+    text-indent: -9999px;
+}
+#toTop a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -5px;
+    margin-left: -5px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 6px 8px 6px;
+    border-color: transparent transparent #ff50a0 transparent;
+    font-size: 0;
+}
+
+.link-footer {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    margin: 50px;
+}
+.link-footer .link-footer-logo {
+    width: 100px;    
+}
+.link-footer .link-footer-menu {
+    width: calc(100% - 100px);
+}
+.link-footer-menu ul {
+    margin: 0 3%;
+    text-align: left;
+}
+.link-footer-menu ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+.link-footer-menu ul li a {
+    text-decoration: none;
+}
+.copyright {
+/*    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;*/
+    padding: 3% 50px;
+    border-top: solid 1px #ede7ea;
+}
+.copyright .copyright-logo {
+    width: 125px;
+}
+.copyright .copyright-logo img {
+    width: 100%;
+}
+.copyright .copyright-text {
+    width: calc(100% - 125px);
+    text-align: right;
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width: 1039px) {
+    .copyright {
+        font-size: 1.0rem;
+    }
+    .copyright .copyright-logo {
+        width: 100px;
+    }
+    .copyright .copyright-text {
+        width: calc(100% - 100px);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .link-footer {
+        display: block;
+    }
+    .link-footer .link-footer-logo {
+        margin-bottom: 20px;
+    }
+    .link-footer .link-footer-menu {
+        width: 100%;
+    }
+    .link-footer-menu ul {
+        display: block;
+        margin: 0;
+        overflow: hidden;
+        zoom:1;
+    }
+    .link-footer-menu ul li {
+        width: 50%;
+        float: left;
+        margin: 0;
+    }
+    .link-footer-menu ul li.w-max {
+        width: 100%;
+    }
+    .link-footer-menu ul li a {
+        display: block;
+        margin: 0px 5px 10px;
+        text-align: center;
+        padding: 10px 0;
+        border: solid 1px #ede7ea;
+        border-radius: 3px;
+        font-size: 1.1rem;
+    }
+    .copyright {
+        display: block;
+    	padding: 3% 40px;
+    }
+    .copyright .copyright-text {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .link-footer {
+        margin: 10% 20px;
+    }
+    .copyright {
+        padding: 5% 20px;
+    }
+}
+
+
+
+/*--- clearfix ------------------*/
+
+.localNav ul:after,
+.affect_member ul:after,
+.link-footer-menu ul:after {
+    clear: both;
+    display: block;
+    height: 0;
+    line-height: 0;
+    content: ".";
+    visibility: hidden;
+}
+
